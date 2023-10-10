@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../lesson_1/style.css">
     <title>Урок 1</title>
 </head>
-<!--Обычно принято называть основной html файл - index.html-->
 <body>
     <main class="contnent">
         <div class="contnent--item">
@@ -20,47 +19,39 @@
                 </legend>
                 <form class="form flex-column" method="post" action="#">
 
-                    <!--Дублируется атрибут class в нескольких местах-->
-                    <input class="form--field" class="form--field" type="image" width="30px" height="30px" src="../lesson_1/image/handshake-simple-solid.svg" alt="ЧТо-то">
+                    <input class="form--field" type="image" width="30px" height="30px" src="../lesson_1/image/handshake-simple-solid.svg" alt="ЧТо-то">
 
                      <label class="form--field--label">Введите имя</label>
-                    <input class="form--field" class="form--field" type="text" placeholder="Ваше имя" name="name"/>
+                    <input class="form--field"  type="text" placeholder="Ваше имя" name="name"/>
 
-                     <label class="form--field--label">Введите фамилию</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" for="surname">Введите фамилию</label>
                     <input class="form--field" type="text" placeholder="Ваша фамилия" name="surname"/>
 
-                     <label class="form--field--label">Введите пароль</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" for="password">Введите пароль</label>
                     <input class="form--field" type="password" placeholder="Ваш пароль" name="password"/>
 
-                     <label class="form--field--label">Повторите пароль</label>
-                    <!--Нет label который приаттачен к этому контролу-->
-                    <input class="form--field" type="password" placeholder="Ваш пароль" name="password"/>
+                     <label class="form--field--label" for="passwordConfirm">Повторите пароль</label>
+                    <input class="form--field" type="password" placeholder="Ваш пароль" name="passwordConfirm"/>
 
-                     <label class="form--field--label">Введите дату рождения</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" for="birthday">Введите дату рождения</label>
                     <input class="form--field" type="date" name="birthday"/>
 
-                     <label class="form--field--label">Введите телефон</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" for="phone">Введите телефон</label>
                     <input class="form--field" type="tel" name="phone" placeholder="Ваш телефон"/>
 
-                     <label class="form--field--label">Введите адрес электронной почты</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" for="email">Введите адрес электронной почты</label>
                     <input class="form--field" type="email" name="email" placeholder="Ваша почта"/>
 
-                     <label class="form--field--label">Введите любимый цвет</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" for="color">Введите любимый цвет</label>
                     <input class="form--field" type="color" name="color"/>
 
                      <label class="form--field--label">Выберете ваш пол</label>
 
                     <div>
                         <input class="form--field" type="radio" id="gender_man" name="gender" value="жен"/>
-                         <label class="form--field--label">М</label>
+                         <label class="form--field--label" for="gender_man">М</label>
                         <input class="form--field" type="radio" id="gender_woman" name="gender" value="муж"/>
-                         <label class="form--field--label">Ж</label>
+                         <label class="form--field--label" for="gender_woman">Ж</label>
                     </div>
 
                      <label class="form--field--label">Выберете формат работы</label>
@@ -68,37 +59,30 @@
                     <div class="form--checkbox--row">
                         <div>
                             <input class="form--field" type="checkbox" name="formatWork" id="fullDay" value="fullDay "/>
-                            <!--Не может найти элемент с id=formatWork-->
                              <label class="form--field--label" for="formatWork">Полный день</label>
                         </div>
 
                         <div>
                             <input class="form--field" type="checkbox" name="formatWork" id="partialWork" value="partialWork "/>
-                            <!--Не может найти элемент с id=formatWork-->
                              <label class="form--field--label" for="formatWork">Частичная занятость</label>
                         </div>
 
                         <div>
                             <input class="form--field" type="checkbox" name="formatWork" id="remoteWork" value="remoteWork "/>
-                            <!--Не может найти элемент с id=formatWork-->
                             <label class="form--field--label" for="formatWork">Удалённая работа</label>
                         </div>
                     </div>
 
-                     <label class="form--field--label" class="form--field--label">Прикрепите резюме</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" class="form--field--label" for="resume">Прикрепите резюме</label>
                     <input class="form--field" type="file" name="resume"/>
 
-                     <label class="form--field--label">Выберете удобное время для созвона с HR-менеджером</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" for="datetimeForInterview">Выберете удобное время для созвона с HR-менеджером</label>
                     <input class="form--field" type="time" name="datetimeForInterview"/>
 
-                     <label class="form--field--label">Выберете удобную дату и время для собеседования в офисе</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" for="timeForCall">Выберете удобную дату и время для собеседования в офисе</label>
                     <input class="form--field" type="datetime-local" name="timeForCall"/>
 
-                     <label class="form--field--label">Насколько вам понравился дизайн</label>
-                    <!--Нет label который приаттачен к этому контролу-->
+                     <label class="form--field--label" for="likeDisignRange">Насколько вам понравился дизайн</label>
                     <input class="form--field" type="range" name="likeDisignRange"/>
 
                     <input class="form--field" type="hidden" name="_crfs"/>
