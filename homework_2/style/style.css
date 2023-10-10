@@ -1,0 +1,18 @@
+:root {
+    --bg-color : #fff;
+    --primary-color: #582BE8;
+    --primary-color-100: #894CFF19;
+    --text-color: #333342;
+    --text-color-secondary: #666C7E;
+    --row-offset: 0.5rem;
+    --rows-offset: 0.5rem;
+}
+
+.row {
+    display: flex;
+}
+
+.search-bar__icon {
+  width: 24px;
+  height: 24px;
+}

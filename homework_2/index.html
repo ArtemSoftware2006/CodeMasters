@@ -3,15 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/normalize.css" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>Урок 4</title>
   </head>
   <body>
-    <!-- TODO -->
-    <header></header>
+    <div class="wrapper">
 
-    <main>
-      <aside></aside>
-      <main></main>
-    </main>
+      <header class="header wrapper__header">
+        <div class="row">
+          <img class="header__logo" src="./assets/images/logo.svg" alt="Логотип"/>
+          <div class="header__search-bar search-bar row">
+             <input type="search" class="search-bar__input"/>
+             <img class="search-bar__icon" src="./assets/images/search-icon.svg" alt="Поиск"/>
+          </div>
+        </div>
+
+        <nav class="header__links-contanier row">
+          <a href="#">Home</a>
+          <a href="#">Club</a>
+        </nav>
+
+        <div class="header__action-panel row">
+          <button class="button" type="button">
+            <img src="./assets/images/invite-friends.svg" alt="infite friends">
+            Invite Friends
+          </button>
+
+          <button class="button button__around" type="button">
+            <img src="./assets/images/pen.svg" alt="Post">
+              Post
+          </button>
+
+          <button class="button" type="button">
+            <img src="./assets/images/mail.svg" alt="mail">
+          </button>
+
+          <button class="button" type="button">
+            <img src="./assets/images/notification-icon.svg" alt="notification">
+          </button>
+
+          <button class="button" type="button">
+            <img src="./assets/images/avatar.svg" alt="avatar">
+          </button>
+
+        </div>
+      </header>
+
+      <main class="chat-page wrapper__content">
+        <aside class="chat-page__sidebar chat-page-sidebar">
+
+        </aside>
+        <main class="chat-page__content chat">
+
+        </main>
+      </main>
+
+    </div>
   </body>
 </html>
