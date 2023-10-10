@@ -1,103 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../lesson_1/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../lesson_1/style.css" />
     <title>Урок 1</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="contnent">
-        <div class="contnent--item">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2334.0125317633347!2d37.58595277512604!3d54.197562172548345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4134406458665881%3A0x3b9d3b09484a31e5!2sCodemasters%20International!5e0!3m2!1sru!2sru!4v1696607203795!5m2!1sru!2sru" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+      <div class="contnent--item">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2334.0125317633347!2d37.58595277512604!3d54.197562172548345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4134406458665881%3A0x3b9d3b09484a31e5!2sCodemasters%20International!5e0!3m2!1sru!2sru!4v1696607203795!5m2!1sru!2sru"
+          width="400"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
 
-        <div class="contnent--item">
-            <fieldset>
-                <legend>
-                    <h3 class="form--title">Форма регистрации на стажировку</h3>
-                </legend>
-                <form class="form flex-column" method="post" action="#">
+      <div class="contnent--item">
+        <fieldset>
+          <legend>
+            <h3 class="form--title">Форма регистрации на стажировку</h3>
+          </legend>
+          <form class="form flex-column" method="post" action="#">
+            <input
+              class="form--field"
+              type="image"
+              width="30px"
+              height="30px"
+              src="../lesson_1/image/handshake-simple-solid.svg"
+              alt="ЧТо-то"
+            />
 
-                    <input class="form--field" type="image" width="30px" height="30px" src="../lesson_1/image/handshake-simple-solid.svg" alt="ЧТо-то">
+            <label class="form--field--label" for="username">Введите имя</label>
+            <input
+              class="form--field"
+              type="text"
+              placeholder="Ваше имя"
+              id="username"
+              name="name"
+            />
 
-                     <label class="form--field--label">Введите имя</label>
-                    <input class="form--field"  type="text" placeholder="Ваше имя" name="name"/>
+            <label class="form--field--label" for="surname"
+              >Введите фамилию</label
+            >
+            <input
+              class="form--field"
+              type="text"
+              placeholder="Ваша фамилия"
+              id="surname"
+              name="surname"
+            />
 
-                     <label class="form--field--label" for="surname">Введите фамилию</label>
-                    <input class="form--field" type="text" placeholder="Ваша фамилия" name="surname"/>
+            <label class="form--field--label" for="password"
+              >Введите пароль</label
+            >
+            <input
+              class="form--field"
+              type="password"
+              placeholder="Ваш пароль"
+              id="password"
+              name="password"
+            />
 
-                     <label class="form--field--label" for="password">Введите пароль</label>
-                    <input class="form--field" type="password" placeholder="Ваш пароль" name="password"/>
+            <label class="form--field--label" for="passwordConfirm"
+              >Повторите пароль</label
+            >
+            <input
+              class="form--field"
+              type="password"
+              placeholder="Ваш пароль"
+              id="passwordConfirm"
+              name="passwordConfirm"
+            />
 
-                     <label class="form--field--label" for="passwordConfirm">Повторите пароль</label>
-                    <input class="form--field" type="password" placeholder="Ваш пароль" name="passwordConfirm"/>
+            <label class="form--field--label" for="birthday"
+              >Введите дату рождения</label
+            >
+            <input class="form--field" type="date" id="birthday" name="birthday" />
 
-                     <label class="form--field--label" for="birthday">Введите дату рождения</label>
-                    <input class="form--field" type="date" name="birthday"/>
+            <label class="form--field--label" for="phone"
+              >Введите телефон</label
+            >
+            <input
+              class="form--field"
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Ваш телефон"
+            />
 
-                     <label class="form--field--label" for="phone">Введите телефон</label>
-                    <input class="form--field" type="tel" name="phone" placeholder="Ваш телефон"/>
+            <label class="form--field--label" for="email"
+              >Введите адрес электронной почты</label
+            >
+            <input
+              class="form--field"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Ваша почта"
+            />
 
-                     <label class="form--field--label" for="email">Введите адрес электронной почты</label>
-                    <input class="form--field" type="email" name="email" placeholder="Ваша почта"/>
+            <label class="form--field--label" for="color"
+              >Введите любимый цвет</label
+            >
+            <input class="form--field" type="color" id="color" name="color" />
 
-                     <label class="form--field--label" for="color">Введите любимый цвет</label>
-                    <input class="form--field" type="color" name="color"/>
+            <label class="form--field--label">Выберете ваш пол</label>
 
-                     <label class="form--field--label">Выберете ваш пол</label>
+            <div>
+              <input
+                class="form--field"
+                type="radio"
+                id="gender_man"
+                name="gender"
+                value="жен"
+              />
+              <label class="form--field--label" for="gender_man">М</label>
 
-                    <div>
-                        <input class="form--field" type="radio" id="gender_man" name="gender" value="жен"/>
-                         <label class="form--field--label" for="gender_man">М</label>
-                        <input class="form--field" type="radio" id="gender_woman" name="gender" value="муж"/>
-                         <label class="form--field--label" for="gender_woman">Ж</label>
-                    </div>
+              <input
+                class="form--field"
+                type="radio"
+                id="gender_woman"
+                name="gender"
+                value="муж"
+              />
+              <label class="form--field--label" for="gender_woman">Ж</label>
+            </div>
 
-                     <label class="form--field--label">Выберете формат работы</label>
+            <label class="form--field--label" for="formatWork">Выберете формат работы</label>
 
-                    <div class="form--checkbox--row">
-                        <div>
-                            <input class="form--field" type="checkbox" name="formatWork" id="fullDay" value="fullDay "/>
-                             <label class="form--field--label" for="formatWork">Полный день</label>
-                        </div>
+            <div class="form--checkbox--row">
+              <div>
+                <input
+                  class="form--field"
+                  type="checkbox"
+                  name="formatWork"
+                  id="fullDay"
+                  value="fullDay "
+                />
+                <label class="form--field--label" for="fullDay"
+                  >Полный день</label
+                >
+              </div>
 
-                        <div>
-                            <input class="form--field" type="checkbox" name="formatWork" id="partialWork" value="partialWork "/>
-                             <label class="form--field--label" for="formatWork">Частичная занятость</label>
-                        </div>
+              <div>
+                <input
+                  class="form--field"
+                  type="checkbox"
+                  name="formatWork"
+                  id="partialWork"
+                  value="partialWork "
+                />
+                <label class="form--field--label" for="partialWork"
+                  >Частичная занятость</label
+                >
+              </div>
 
-                        <div>
-                            <input class="form--field" type="checkbox" name="formatWork" id="remoteWork" value="remoteWork "/>
-                            <label class="form--field--label" for="formatWork">Удалённая работа</label>
-                        </div>
-                    </div>
+              <div>
+                <input
+                  class="form--field"
+                  type="checkbox"
+                  name="formatWork"
+                  id="remoteWork"
+                  value="remoteWork "
+                />
+                <label class="form--field--label" for="remoteWork"
+                  >Удалённая работа</label
+                >
+              </div>
+            </div>
 
-                     <label class="form--field--label" class="form--field--label" for="resume">Прикрепите резюме</label>
-                    <input class="form--field" type="file" name="resume"/>
+            <label
+              class="form--field--label"
+              class="form--field--label"
+              for="resume"
+              >Прикрепите резюме</label
+            >
+            <input class="form--field" type="file" id="resume" name="resume" />
 
-                     <label class="form--field--label" for="datetimeForInterview">Выберете удобное время для созвона с HR-менеджером</label>
-                    <input class="form--field" type="time" name="datetimeForInterview"/>
+            <label class="form--field--label" for="datetimeForInterview"
+              >Выберете удобное время для созвона с HR-менеджером</label
+            >
+            <input
+              class="form--field"
+              type="time"
+              id="datetimeForInterview"
+              name="datetimeForInterview"
+            />
 
-                     <label class="form--field--label" for="timeForCall">Выберете удобную дату и время для собеседования в офисе</label>
-                    <input class="form--field" type="datetime-local" name="timeForCall"/>
+            <label class="form--field--label" for="timeForCall"
+              >Выберете удобную дату и время для собеседования в офисе</label
+            >
+            <input
+              class="form--field"
+              type="datetime-local"
+              name="timeForCall"
+              id="timeForCall"
+            />
 
-                     <label class="form--field--label" for="likeDisignRange">Насколько вам понравился дизайн</label>
-                    <input class="form--field" type="range" name="likeDisignRange"/>
+            <label class="form--field--label" for="likeDisignRange"
+              >Насколько вам понравился дизайн</label
+            >
+            <input class="form--field" type="range" id="likeDisignRange" name="likeDisignRange" />
 
-                    <input class="form--field" type="hidden" name="_crfs"/>
+            <input class="form--field" type="hidden" name="_crfs" />
 
-                    <input class="form--button--reset " type="reset" value="Очистить"/>
+            <input class="form--button--reset" type="reset" value="Очистить" />
 
-                    <button class="form--button--submit" type="submit">Отправить</button>
-                </form>
-            </fieldset>
-        </div>
+            <button class="form--button--submit" type="submit">
+              Отправить
+            </button>
+          </form>
+        </fieldset>
+      </div>
 
-        <div class="contnent--item">
-            <iframe width="400" height="300" src="https://www.youtube.com/embed/895h1tUgBuc" title="Как написать хорошее резюме? Лайфхаки от HR-специалиста" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-
+      <div class="contnent--item">
+        <iframe
+          width="400"
+          height="300"
+          src="https://www.youtube.com/embed/895h1tUgBuc"
+          title="Как написать хорошее резюме? Лайфхаки от HR-специалиста"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
     </main>
-</body>
+  </body>
 </html>
