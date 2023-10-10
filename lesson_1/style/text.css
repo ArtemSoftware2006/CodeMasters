@@ -1,0 +1,21 @@
+.text {
+    line-height:1.25rem;
+  }
+  .text_smal {
+    font-size: 0.75rem;
+  }
+  .text_primary {
+    color : var(--text-color)
+  }
+  .text_white {
+    color : var(--bg-color)
+  }
+  .text_secondary {
+    color : var(--text-color-secondary)
+  }
+  .text_bold {
+    font-weight: bold;
+  }
+  .text_regular {
+    font-weight: 400;
+  }

@@ -5,19 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/normalize.css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/header.css" />
+    <link rel="stylesheet" href="./style/text.css" />
+    <link rel="stylesheet" href="./style/UI/button.css" />
+    <link rel="stylesheet" href="./style/chat-page-slidebar.css" />
+    <link rel="stylesheet" href="./style/chat-page-content.css" />
     <title>Урок 4</title>
   </head>
 
   <body>
-    
     <div class="wrapper text text_primary">
-
       <header class="header wrapper__header">
         <div class="row">
-          <img class="header__logo" src="./assets/images/logo.svg" alt="Логотип"/>
+          <img
+            class="header__logo"
+            src="./assets/images/logo.svg"
+            alt="Логотип"
+          />
           <div class="header__search-bar search-bar row">
-             <input type="search" class="search-bar__input" placeholder="Search"/>
-             <img class="search-bar__icon" src="./assets/images/search-icon.svg" alt="Поиск"/>
+            <input
+              type="search"
+              class="search-bar__input"
+              placeholder="Search"
+            />
+            <img
+              class="search-bar__icon"
+              src="./assets/images/search-icon.svg"
+              alt="Поиск"
+            />
           </div>
         </div>
 
@@ -28,115 +43,128 @@
 
         <div class="header__action-panel row">
           <button class="button button_gray" type="button">
-            <img src="./assets/images/invite-friends.svg" alt="infite friends">
+            <img
+              src="./assets/images/invite-friends.svg"
+              alt="infite friends"
+            />
             Invite Friends
           </button>
 
           <button class="button button_around text_white" type="button">
-            <img src="./assets/images/pen.svg" alt="Post">
-              Post
+            <img src="./assets/images/pen.svg" alt="Post" />
+            Post
           </button>
 
           <button class="button button_icon" type="button">
-            <img src="./assets/images/mail.svg" alt="mail">
+            <img src="./assets/images/mail.svg" alt="mail" />
           </button>
 
           <button class="button button_icon" type="button">
-            <img src="./assets/images/notification-icon.svg" alt="notification">
+            <img
+              src="./assets/images/notification-icon.svg"
+              alt="notification"
+            />
           </button>
 
           <button class="button button_icon" type="button">
-            <img src="./assets/images/avatar.svg" alt="avatar">
+            <img src="./assets/images/avatar.svg" alt="avatar" />
           </button>
-
         </div>
       </header>
 
       <main class="chat-page wrapper__content rows">
         <aside class="chat-page__sidebar chat-page-sidebar">
-          <div class="chat-page-sidebar__title row__centered-x ">
+          <div class="chat-page-sidebar__title row__centered-x">
             <h2>Messages</h2>
           </div>
 
           <div class="chat-page-sidebar__list rows">
-
-            <div class="message-list_item message-list_item--system message-request row">
-
-              <img src="./assets/images/request-icon.svg" alt="Requests">
+            <div
+              class="message-list_item message-list_item--system message-request row"
+            >
+              <img src="./assets/images/request-icon.svg" alt="Requests" />
 
               <div class="message-info">
-                <div class="message-info__heading text_bold">
-                  Requests
-                </div>
-                <div class="text text_secondary row__centered-y row text_regular">
-                  <img src="./assets/images/messages-icon.svg" alt="Messages">
+                <div class="message-info__heading text_bold">Requests</div>
+                <div
+                  class="text text_secondary row__centered-y row text_regular"
+                >
+                  <img src="./assets/images/messages-icon.svg" alt="Messages" />
                   3 requests
                 </div>
               </div>
             </div>
 
             <div class="message-list_item row">
-
               <div class="message-avatar">
-                <img src="./assets/images/message-avatar-1.svg" alt="User1">
+                <img src="./assets/images/message-avatar-1.svg" alt="User1" />
               </div>
 
               <div class="message-info">
-
                 <div class="row">
-                  <span class="message-info_username text_bold">Joe Swanson</span>
-                  <span class="message-info_time text_secondary text_smal text_regular">27 seconds ago</span>
+                  <span class="message-info_username text_bold"
+                    >Joe Swanson</span
+                  >
+                  <span
+                    class="message-info_time text_secondary text_smal text_regular"
+                    >27 seconds ago</span
+                  >
                 </div>
 
                 <div class="message-info__last-message text_smal text_bold">
                   You didn't get any ice cream?
                 </div>
-
               </div>
             </div>
 
             <div class="message-list_item row">
-
               <div class="message-avatar">
-                <img src="./assets/images/message-avatar-2.svg" alt="User1">
+                <img src="./assets/images/message-avatar-2.svg" alt="User1" />
               </div>
 
               <div class="message-info">
-
                 <div class="row">
-                  <span class="message-info_username text_bold">Meg Griffin</span>
-                  <span class="message-info_time text_secondary text_smal text_regular">Dec 7, 2022</span>
+                  <span class="message-info_username text_bold"
+                    >Meg Griffin</span
+                  >
+                  <span
+                    class="message-info_time text_secondary text_smal text_regular"
+                    >Dec 7, 2022</span
+                  >
                 </div>
 
-                <div class="message-info_role text_smal">Sleeper Agent, Family Guy</div>
+                <div class="message-info_role text_smal">
+                  Sleeper Agent, Family Guy
+                </div>
 
                 <div class="message-info__last-message text_smal text_regular">
-                  <span class="text_secondary text_bold">You:</span> 
+                  <span class="text_secondary text_bold">You:</span>
                   Good Chris. I've taught you well. You...
                 </div>
-
               </div>
             </div>
-
           </div>
-
         </aside>
 
         <main class="chat-page__content chat">
-
           <div class="chat__header chat-header">
-
-            <div class="chat-header__conversation-details conversation-details row">
-
+            <div
+              class="chat-header__conversation-details conversation-details row"
+            >
               <div class="conversation-details__details-icon">
-                <img src="./assets/images/message-avatar-2.svg" alt="User2">
+                <img src="./assets/images/message-avatar-2.svg" alt="User2" />
               </div>
 
-              <div class="conversation-details__participant-details participant-details">
-
-                <div class="participant-details__username text_bold text_smal username">
+              <div
+                class="conversation-details__participant-details participant-details"
+              >
+                <div
+                  class="participant-details__username text_bold text_smal username"
+                >
                   Meg Griffin
-                  <span class="username__messager-username text_secondary">@mmmeg</span>
+                  <span class="username__messager-username text_secondary"
+                    >@mmmeg</span
+                  >
                 </div>
 
                 <div class="participant-details__role text_smal text_secondary">
@@ -144,41 +172,39 @@
                 </div>
 
                 <div class="participant-details__topic text_smal text_smal">
-                  Agent 2476 is aware and is awaiting for instructions from our side. Please wait for us to call you.
+                  Agent 2476 is aware and is awaiting for instructions from our
+                  side. Please wait for us to call you.
                 </div>
               </div>
 
               <div class="conversation-details__more">
-                <img src="./assets/images/dotted.svg" alt="More">
+                <img src="./assets/images/dotted.svg" alt="More" />
               </div>
-
             </div>
 
-            <div class="chat-header__banner banner row row__centered-y text_white">
-
-              <div class="banner__question text_smal text_regular row row__centered-y">
-                <img src="./assets/images/question-icon.svg" alt="Question">
+            <div
+              class="chat-header__banner banner row row__centered-y text_white"
+            >
+              <div
+                class="banner__question text_smal text_regular row row__centered-y"
+              >
+                <img src="./assets/images/question-icon.svg" alt="Question" />
                 Hey Eric, have you collaborated with Eric yet?
               </div>
 
               <div class="banner__answer text row">
-                <span style="opacity: 60%;">
-                  Not yes
-                </span>
-                
+                <span style="opacity: 60%"> Not yes </span>
+
                 <span>Yes</span>
               </div>
-
             </div>
-
           </div>
 
           <div class="chat__content chat-content">
-
             <div class="chat-content__message-list message-list">
-
-              <div class="message-list__message message message_sent text_white text_smal">
-
+              <div
+                class="message-list__message message message_sent text_white text_smal"
+              >
                 <div class="message__body message_body__send text_regular">
                   So... question. How long has Stewie been unconcious?
                 </div>
@@ -186,55 +212,56 @@
                 <div class="message__date message__date_send text_secondary">
                   April 23, 2023, 12:33 PM
                 </div>
-
               </div>
 
               <div class="message-list__message message text_white text_smal">
-
                 <div class="message__body text_regular">
-                  Oh my god, Chris, he knows. Dad, I'm so sorry we should have told someone but we were too scared. I wanted to take him to the hospital, but Chris wouldn't let me.
+                  Oh my god, Chris, he knows. Dad, I'm so sorry we should have
+                  told someone but we were too scared. I wanted to take him to
+                  the hospital, but Chris wouldn't let me.
                 </div>
 
                 <div class="message__date text_secondary">
                   April 23, 2023, 12:10 PM
                 </div>
-
               </div>
 
-              <div class="message-list__message message message_sent text_white text_smal">
-
+              <div
+                class="message-list__message message message_sent text_white text_smal"
+              >
                 <div class="message__body message_body__send text_regular">
-                  Good Chris. I've taught you well. You have the right instincts. When you were babies, I used to knock you kids out every month or so. Some times by accident. Sometimes when the Patriots lost. You just gotta cover it up and everything works it self out. Meg, this is a list of hats. I need these by 4 o'clock.                
+                  Good Chris. I've taught you well. You have the right
+                  instincts. When you were babies, I used to knock you kids out
+                  every month or so. Some times by accident. Sometimes when the
+                  Patriots lost. You just gotta cover it up and everything works
+                  it self out. Meg, this is a list of hats. I need these by 4
+                  o'clock.
                 </div>
 
                 <div class="message__date message__date_send text_secondary">
                   April 23, 2023, 12:33 PM
                 </div>
-
               </div>
-
             </div>
 
             <div class="chat-content__message-input message-input row">
+              <input
+                type="text"
+                class="message-input__area"
+                placeholder="What would you like to say?"
+              />
 
-              <input type="text" class="message-input__area" placeholder="What would you like to say?">
-
-              <button class="message-input__send button button-send-icon ">
-
-                <img class="message-input__send-icon" src="./assets/images/send-icon.svg" alt="Send">
-
+              <button class="message-input__send button button-send-icon">
+                <img
+                  class="message-input__send-icon"
+                  src="./assets/images/send-icon.svg"
+                  alt="Send"
+                />
               </button>
-
             </div>
-
           </div>
-
         </main>
-
       </main>
-
     </div>
-
   </body>
-
 </html>
