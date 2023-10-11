@@ -1,0 +1,52 @@
+:root {
+    --bg-color-light : #f9f9fb;
+    --text-color: #fff;
+    --text-color-link : #872bff;
+    --border-color : #e2e2e2;
+    --bukvica-color : rgb(19, 91, 208);
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row-centered-x {
+    justify-content: center;
+}
+
+.row-centered-y {
+    align-items: center;
+}
+
+.bukvica {
+    font-size: 3rem;
+    color: var(--bukvica-color);
+}
+
+.searchbar {
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    border: 1px solid var(--border-color);
+}
+
+.text {
+    font-size: 1rem;
+    line-height: 1.15rem;
+}
+
+.text_bold {
+    font-weight: bold;
+}
+
+.text_regular {
+    font-weight: 400;
+}
+
+.text_link {
+    color: var(--text-color-link);
+}
+
