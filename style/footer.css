@@ -1,0 +1,38 @@
+.footer {
+    background-color: var(--border-color);
+}
+
+.footer-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.footer-logo__text {
+    margin: 1rem 0;
+}
+
+.nav-col__list-item {
+    margin: 0.5rem;
+}
+
+.nav-col-1 {
+    grid-column-start: 2;
+    
+}
+
+.nav-col-2 {
+    grid-column-start: 3;
+
+}
+
+.nav-col-3 {
+    grid-column-start: 4;
+
+}
+
+.nav-col-4 {
+    grid-column-start: 5;
+    grid-column-end: 5;
+}

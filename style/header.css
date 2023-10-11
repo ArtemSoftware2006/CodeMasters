@@ -1,11 +1,22 @@
 .sticky-container {
     position: sticky;
+    top: 0;
+}
+
+.header__main {
+    padding: 1.5rem 1rem 1rem 1rem;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    align-content: end;
 }
 
 .header {
+
+}
+
+.header__logo {
+    display: flex;
     align-items: center;
-    padding: 1.5rem 1rem 1rem 1rem;
-    border: 1px solid var(--border-color);
 }
 
 .main-navigator {
@@ -27,5 +38,21 @@
 }
 
 .links-container__item{
+    margin: 0 0.5rem;
+}
+
+.references {
+    justify-content: space-between;
+    padding:0.5rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color-light);
+}
+
+.references__language-container {
+    
+    padding: 0 3rem 0 0;
+}
+
+.references-item {
     margin: 0 0.5rem;
 }
