@@ -30,9 +30,6 @@ body {
     flex-direction: column;
 }
 
-.form {
-}
-
 .form--field--label {
     margin: 10px 0px 0px 2px;
 }
