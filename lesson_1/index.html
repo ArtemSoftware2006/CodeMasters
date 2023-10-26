@@ -72,16 +72,16 @@
         </div>
       </header>
 
-      <main class="chat-page wrapper__content rows">
+      <main class="chat-page rows">
         <aside class="chat-page__sidebar chat-page-sidebar">
           <div class="chat-page-sidebar__title row__centered-x">
             <h2>Messages</h2>
           </div>
 
-          <div class="chat-page-sidebar__list rows">
-            <!--Необходимо соблюдать один нейминг везде. Если решил использовать _ для модификатора то нужно везде использовать его. + я тут вижу, что элемент от блока отделен одним _ вместо двух.-->
+          <div class="chat-page-sidebar__list-message rows">
+            <!-- ИСПРАВЛЕНО : Необходимо соблюдать один нейминг везде. Если решил использовать _ для модификатора то нужно везде использовать его. + я тут вижу, что элемент от блока отделен одним _ вместо двух.-->
             <div
-              class="message-list_item message-list_item--system message-request row"
+              class="message-list__item message-list__item_system message-request row"
             >
               <img src="./assets/images/request-icon.svg" alt="Requests" />
 
@@ -96,9 +96,9 @@
               </div>
             </div>
 
-            <div class="message-list_item row">
-              <!--Нет смысла добавлять БЭМ класс если он нигде не нужен (ни в css, ни с точки зрения БЭМа)-->
-              <div class="message-avatar">
+            <div class="message-list__item row">
+              <!--ИСПРАВЛЕНО : Нет смысла добавлять БЭМ класс если он нигде не нужен (ни в css, ни с точки зрения БЭМа)-->
+              <div >
                 <img src="./assets/images/message-avatar-1.svg" alt="User1" />
               </div>
 
@@ -119,8 +119,8 @@
               </div>
             </div>
 
-            <div class="message-list_item row">
-              <div class="message-avatar">
+            <div class="message-list__item row">
+              <div>
                 <img src="./assets/images/message-avatar-2.svg" alt="User1" />
               </div>
 
