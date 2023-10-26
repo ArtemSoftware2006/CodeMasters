@@ -1,13 +1,11 @@
-/* 
-TODO: Переименовать перменные
-*/
+
 :root {
     --bg-color-light : #f9f9fb;
     --bg-color-dark : rgb(152, 152, 152);
     --text-color: #fff;
     --text-color-link : #872bff;
     --border-color : #e2e2e2;
-    --bukvica-color : rgb(19, 91, 208);
+    --betony-color : rgb(19, 91, 208);
     --text-title : 48px;
     --text-sub-title : 24px
 }
@@ -29,9 +27,9 @@ TODO: Переименовать перменные
     align-items: center;
 }
 
-.bukvica {
+.betony {
     font-size: 3rem;
-    color: var(--bukvica-color);
+    color: var(--betony-color);
 }
 
 .searchbar {
@@ -97,15 +95,18 @@ TODO: Переименовать перменные
 }
 
 .sidebar {
-    /*Блокам нельзя задавать внешнюю геометрию и позиционирование. Вместо этого, оно должно быть задано элементу.
+    /*ИСПРАВЛЕНО!!! Блокам нельзя задавать внешнюю геометрию и позиционирование. Вместо этого, оно должно быть задано элементу.
     Суть блока в том, что ты можешь скопипастить его в любое место и он ничего не сломает. В данном же случае, если захочешь скопипастить блок, то он сломает верстку поскольку у него задано позиционирование*/
+    grid-column: 1/2;
+
+    overflow-y: scroll;
+}
+
+.content__sidebar {
     position: sticky;
     top: 7.0625rem;
     left: 0.625rem;
     padding: 1rem 1rem 1rem 3rem;
-    grid-column: 1/2;
-
-    overflow-y: scroll;
 }
 
 .content-page {
@@ -118,8 +119,8 @@ TODO: Переименовать перменные
     gap: 1.5rem;
 }
 
-.content-navigation {
-    /* Тоже самое */
+
+.content__content-navigation {
     position: sticky;
     top: 90px;
     left: 10px;
