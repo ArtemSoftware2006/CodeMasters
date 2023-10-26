@@ -1,14 +1,14 @@
     .button {
         border: none;
     }
-    
+
     .button_icon {
     background-color: var(--bg-color);
     }
 
     .button_around {
     background-color: var(--primary-color);
-    border-radius: 1.5rem;
+    border-radius: 1.5rem; /*Как правило, если речь идет НЕ о шрифте,а о геометрии (отступы, радиус и тп) используют px или %. rem имеет немного другое предназначение + пиксели легче поспринимать + в макетах почти всегда указываются пиксели, надо бы исправить */
     padding: 0 1.25rem;
     }
 

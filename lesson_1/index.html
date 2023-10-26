@@ -79,6 +79,7 @@
           </div>
 
           <div class="chat-page-sidebar__list rows">
+            <!--Необходимо соблюдать один нейминг везде. Если решил использовать _ для модификатора то нужно везде использовать его. + я тут вижу, что элемент от блока отделен одним _ вместо двух.-->
             <div
               class="message-list_item message-list_item--system message-request row"
             >
@@ -96,6 +97,7 @@
             </div>
 
             <div class="message-list_item row">
+              <!--Нет смысла добавлять БЭМ класс если он нигде не нужен (ни в css, ни с точки зрения БЭМа)-->
               <div class="message-avatar">
                 <img src="./assets/images/message-avatar-1.svg" alt="User1" />
               </div>
