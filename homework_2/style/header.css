@@ -1,5 +1,5 @@
 .sticky-container {
-    position: sticky;
+    position: sticky; /* Имееет смысл перенести это в wrapper__header, поскольку тут задается внешняя геометрия*/
     top: 0;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .main-navigator {
-    margin: 0 2rem;
+    margin: 0 2rem; /* Внешняя геометрия*/
     justify-content: space-between;
     flex-grow: 1;
 }
@@ -37,22 +37,22 @@
     justify-content: space-between;
 }
 
-.links-container__item{
+.links-container__item {
     margin: 0 0.5rem;
 }
 
 .references {
     justify-content: space-between;
-    padding:0.5rem;
+    padding: 0.5rem;
     border: 1px solid var(--border-color);
     background-color: var(--bg-color-light);
 }
 
 .references__language-container {
-    
+
     padding: 0 3rem 0 0;
 }
 
 .references-item {
-    margin: 0 0.5rem;
+    margin: 0 0.5rem;  /* Внешняя геометрия*/
 }
