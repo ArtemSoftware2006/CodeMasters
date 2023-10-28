@@ -1,0 +1,42 @@
+:root {
+    --bg-color : #fff;
+    --bg-area : #f8faff;
+    --primary-color: #582BE8;
+    --primary-color-100: #894CFF19;
+    --text-color: #333342;
+    --text-color-secondary: #666C7E;
+    --border-color-search : #E4E8F1;
+    --row-offset: 0.5rem;
+    --rows-offset: 0.5rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.row {
+    display: flex;
+    gap: var(--row-offset, 0.5rem);
+}
+
+.rows {
+  display: grid;
+  gap: var(--rows-offset, 8px);
+}
+
+.row__centered-y {
+  align-items: center;
+}
+
+.row__centered-x {
+  justify-content: center;
+}
+
+.chat-page {
+  width: 57.8125rem;
+  grid-template-columns: 21.25rem  36.3694rem;
+}
+
