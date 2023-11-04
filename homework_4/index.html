@@ -4,14 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/main.css"/>
+    <link rel="stylesheet" href="./dist/normalize.css"/>
+    <script defer src="./dist/main.js"></script>
     <title>Валидвция формы</title>
 </head>
 <body>
     
-    <div class="main">Hello, SCSS</div>
+    <div class="wrapper">
 
-    <script src="./dist/main.js">
+        <div id="message" class="meesage display-none">
+            Вы успешно зарегистрировались!
+        </div>
+        
+        <form id="form" class="form wrapper_form" action="/" method="post">
+            <div class="form__content">
+                <div class="form__item">
+                    <label class="form__label form__label_required" for="mail">Электронная почта</label>
+                    <input class="form__field" id="mail" type="email" placeholder="Введите почту"/>
+                    <span class="form__error"></span>
+                </div>
+                <div class="form__item">
+                    <label class="form__label form__label_required" for="fio">ФИО</label>
+                    <input class="form__field" id="fio" type="text" placeholder="Введите ФИО"/>
+                    <span class="form__error"></span>
+                </div>
+                <div class="form__item">
+                    <label class="form__label form__label_required" for="password">Пароль</label>
+                    <input class="form__field" id="password" type="password" placeholder="Введите пароль"/>
+                    <span class="form__error"></span>
+                </div>
+                <div class="form__item">
+                    <label class="form__label form__label_required" for="confirmPassword">Подтвердите пароль</label>
+                    <input class="form__field" id="confirmPassword" type="password" placeholder="Введите пароль"/>
+                    <span class="form__error"></span>
+                </div>
+                <div class="form__item">
+                    <label class="check" for="agreement">
+                        <input class="check__input" id="agreement" type="checkbox"/> 
+                        <span class="check__box"></span>
+                        Я подтверждаю что хочу зарегистрироваться
+                    </label>
+                    <div class="form__error"></div>
+                </div>
 
-    </script>
+                <div class="form__item form__item_btn ">
+                    <button class="button button_primary" type="submit">Зарегистрироваться</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

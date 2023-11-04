@@ -1,4 +1,138 @@
-.main {
-    font-size: 40px;
-    color: red;
+$bg-color-primary : rgb(245, 245, 245);
+$bg-color-secondary :#586870;
+$bg-color-error: #FFEFEF;
+$bg-color-seccuss: rgb(153, 255, 153);
+$bg-color-focus: #E4F0FF;
+
+$btn-bg-color-primary : rgb(138, 65, 255);
+$btn-font-color-primary : white;
+
+$border-color : rgb(138, 65, 255);
+$border-color-secondary :#C0C6C9;
+$border-color-error : red;
+$border-color-seccuss : rgb(0, 97, 0);
+$border-color-focus: #007AFF;
+
+$color-primary : black;
+$color-secondary : #C0C6C9;
+$color-error : #FF3D00;
+
+$text-primary : 18px;
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: $text-primary;
+    font-family: Poppins;
 }
+
+.wrapper_form {
+    border-radius: 4px;
+    width: 250px;
+}
+
+.form {
+    background-color: $bg-color-primary;
+    padding: 24px;
+    border: 2px solid $border-color;
+
+}
+
+.form__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.form__item {
+    margin: 0.5rem 0;
+}
+
+.form__item_btn {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 0;
+    justify-content: center;
+}
+
+.form__field {
+    border: 0.5px solid $border-color-secondary;
+    border-radius: 8px;
+    line-height: 2rem;
+    padding: 3px 8px 3px 16px;
+}
+
+.form__field_error {
+    background-color: $bg-color-error;
+    border-color: $border-color-error;
+}
+.form__field:focus {
+    background-color: $bg-color-focus;
+    border-color: $border-color-focus;
+}
+.form__label {
+    color: $color-primary;
+    margin-bottom: 0.25rem;
+}
+.form__label_error {
+    color : $color-error;
+}
+.form__label_required::after {
+    content: "*";
+}
+
+.form__error {
+    color: $color-error;
+}
+
+.check {
+    padding-left: 2em;
+    line-height: 2rem;
+}
+
+.check__input {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.check__box {
+    margin-left: -2.2em;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    background-size: 100% 100%;
+    background-image: url("../assets/off.svg");
+}
+
+.check__input:checked  + .check__box{
+    background-image: url("../assets/on.svg");
+}
+
+.button {
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+}
+
+.button_primary {
+    justify-self: center;
+    background-color: $btn-bg-color-primary;
+    color: $btn-font-color-primary;
+}
+
+.display-none {
+    display: none;
+}
+
+.meesage {
+    padding: 30px;
+    background-color: $bg-color-seccuss;
+    border-radius: 0.5rem;
+    border: 1px solid $border-color-seccuss;
+}
+

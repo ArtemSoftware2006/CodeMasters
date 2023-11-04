@@ -1,7 +1,123 @@
 /*!****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss ***!
   \****************************************************************************************************************/
-.main {
-  font-size: 40px;
-  color: red;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 18px;
+  font-family: Poppins;
+}
+
+.wrapper_form {
+  border-radius: 4px;
+  width: 250px;
+}
+
+.form {
+  background-color: rgb(245, 245, 245);
+  padding: 24px;
+  border: 2px solid rgb(138, 65, 255);
+}
+
+.form__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.form__item {
+  margin: 0.5rem 0;
+}
+
+.form__item_btn {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+.form__field {
+  border: 0.5px solid #C0C6C9;
+  border-radius: 8px;
+  line-height: 2rem;
+  padding: 3px 8px 3px 16px;
+}
+
+.form__field_error {
+  background-color: #FFEFEF;
+  border-color: red;
+}
+
+.form__field:focus {
+  background-color: #E4F0FF;
+  border-color: #007AFF;
+}
+
+.form__label {
+  color: black;
+  margin-bottom: 0.25rem;
+}
+
+.form__label_error {
+  color: #FF3D00;
+}
+
+.form__label_required::after {
+  content: "*";
+}
+
+.form__error {
+  color: #FF3D00;
+}
+
+.check {
+  padding-left: 2em;
+  line-height: 2rem;
+}
+
+.check__input {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.check__box {
+  margin-left: -2.2em;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  background-size: 100% 100%;
+  background-image: url(1f09da2f26e260ee04c1.svg);
+}
+
+.check__input:checked + .check__box {
+  background-image: url(0ce016788bda12dbc9f9.svg);
+}
+
+.button {
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem;
+}
+
+.button_primary {
+  justify-self: center;
+  background-color: rgb(138, 65, 255);
+  color: white;
+}
+
+.display-none {
+  display: none;
+}
+
+.meesage {
+  padding: 30px;
+  background-color: rgb(153, 255, 153);
+  border-radius: 0.5rem;
+  border: 1px solid rgb(0, 97, 0);
 }
