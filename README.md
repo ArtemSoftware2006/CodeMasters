@@ -11,5 +11,5 @@
 
 ## Lesson 1
 Сайт с Симсами
-## Lesson 2
+## Lesson 2 (Lesson 2.1, Lesson 2.2)
 Мастер класс по JS
