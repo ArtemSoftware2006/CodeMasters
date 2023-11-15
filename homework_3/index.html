@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="./src/style/normalize.css" />
     <link rel="stylesheet" href="./src/style/style.css" />
     <link rel="stylesheet" href="./src/style/header.css" />
     <link rel="stylesheet" href="./src/style/banner.css" />
     <link rel="stylesheet" href="./src/style/button.css" />
     <link rel="stylesheet" href="./src/style/footer.css">
+    <link rel="stylesheet" href="./src/style/normalize.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <title>Homework 2</title>
   </head>
   
@@ -20,60 +23,69 @@
       </div>
 
       <div class="wrapper__header sticky-container">
-        <header class="sticky-container__header header">
-          <div class="header__main row">
+        <header class="sticky-container__header header   navbar navbar-expand-lg ">
+          <div class="header__main  container-fluid my-row">
 
-            <div class="header__logo row text_bold">
+            <div class="header__logo  my-row text_bold">
               <span class="betony">M</span> mdn web docs_
             </div>
 
-            <div class="main-navigator row">
-              <div class="main-navigator__links-container row-centered-y row">
-                <div class="links-container__item">References</div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="links-container__item">Guides</div>
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-                <div class="links-container__item">Plus</div>
-
-                <div class="links-container__item">Blog</div>
-
-                <div class="links-container__item">Play</div>
-
-                <div class="links-container__item">AI Help</div>
+              <div class="main-navigator">
+                <div class="main-navigator__links-container  my-row-centered-y  my-row">
+                  <div class="links-container__item">References</div>
+  
+                  <div class="links-container__item">Guides</div>
+  
+                  <div class="links-container__item">Plus</div>
+  
+                  <div class="links-container__item">Blog</div>
+  
+                  <div class="links-container__item">Play</div>
+  
+                  <div class="links-container__item">AI Help</div>
+                </div>
+  
+                <div class="main-navigator__tools  my-row-centered-y  my-row  ">
+                  <div class="main-navigator__item">
+                    <button class="button button_theme">Theme</button>
+                  </div>
+  
+                  <div class="main-navigator__item  ">
+                    <input class="searchbar" type="search" placeholder="Search" />
+                  </div>
+  
+                  <div class="main-navigator__item  ">
+                    <button class="button button_sign-in">Login</button>
+                  </div>
+  
+                  <div class="main-navigator__item  ">
+                    <button class="button button_sign-up">Registr</button>
+                  </div>
+                </div>
               </div>
 
-              <div class="main-navigator__tools row-centered-y row">
-                <div class="main-navigator__item">
-                  <button class="button button_theme">Theme</button>
-                </div>
-
-                <div class="main-navigator__item">
-                  <input class="searchbar" type="search" placeholder="Search" />
-                </div>
-
-                <div class="main-navigator__item">
-                  <button class="button button_sign-in">Login</button>
-                </div>
-
-                <div class="main-navigator__item">
-                  <button class="button button_sign-up">Registr</button>
-                </div>
-              </div>
             </div>
-          </div>
-
-          <div class="main-navigator__references row row-centered-y references">
-            <div class="references__container row">
-              <div class="references-item">References</div>
-
-              <div class="references-arrow">></div>
-
-              <div class="references-item">HTML</div>
-            </div>
-
-            <div class="references__language-container">English</div>
           </div>
         </header>
+
+        <div class="main-navigator__references  my-row  my-row-centered-y references">
+          <div class="references__container  my-row">
+            <div class="references-item">References</div>
+
+            <div class="references-arrow">></div>
+
+            <div class="references-item">HTML</div>
+          </div>
+
+          <div class="references__language-container">English</div>
+        </div>
+
       </div>
 
       <main class="wrapper__content content">
@@ -240,7 +252,7 @@
 
           </main>
 
-          <div class="content__content-navigation content-navigation  column">
+          <div class="content__content-navigation content-navigation  ">
 
             <div class="content-navigation__link-title  text_bold">
                 In this article

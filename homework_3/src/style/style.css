@@ -1,4 +1,3 @@
-
 :root {
     --bg-color-light : #f9f9fb;
     --bg-color-dark : rgb(152, 152, 152);
@@ -7,10 +6,170 @@
     --border-color : #e2e2e2;
     --betony-color : rgb(19, 91, 208);
     --text-title : 48px;
-    --text-sub-title : 24px
+    --text-sub-title : 24px;
 }
 
-.row {
+@media (max-width : 992px) {
+    .content-page {
+        padding: 2rem;
+        grid-column: 2/4;
+        grid-row: 1/3;
+    }
+    
+    .content__content-navigation {
+        grid-column: 1/2;
+        margin: 8px;
+        position: sticky;
+        top: 7.5rem;
+        z-index: -1;
+    }
+    .content-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 200px 1fr;  
+    }
+    .sidebar {
+        /*ИСПРАВЛЕНО!!! Блокам нельзя задавать внешнюю геометрию и позиционирование. Вместо этого, оно должно быть задано элементу.
+        Суть блока в том, что ты можешь скопипастить его в любое место и он ничего не сломает. В данном же случае, если захочешь скопипастить блок, то он сломает верстку поскольку у него задано позиционирование*/
+        grid-column: 1/2;
+        grid-row: 2/2;
+        z-index: -1;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: sticky;
+        left: 0;
+        top: 10.065rem
+    }
+    .main-navigator {
+        margin: 0 2rem; /* Внешняя геометрия*/
+        justify-content: space-between;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        z-index: -1;
+    }
+    .main-navigator__links-container {
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        margin-bottom: 10px;
+        order: 2;
+    }
+    .main-navigator__tools {
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        order: 1;
+    }
+
+}
+
+@media (max-width : 768px) {
+    .content-page {
+        padding: 2rem;
+        /*grid-column: 2/4;
+        grid-row: 1/3;*/
+    }
+    
+    .content__content-navigation {
+        display: none;
+        /*grid-column: 1/2;*/
+        margin: 8px;
+        position: sticky;
+        top: 7.5rem;
+        z-index: -1;
+    }
+    .content-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: block;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 200px 1fr;  
+    }
+    .sidebar {
+        /*ИСПРАВЛЕНО!!! Блокам нельзя задавать внешнюю геометрию и позиционирование. Вместо этого, оно должно быть задано элементу.
+        Суть блока в том, что ты можешь скопипастить его в любое место и он ничего не сломает. В данном же случае, если захочешь скопипастить блок, то он сломает верстку поскольку у него задано позиционирование*/
+        display: none;
+        /*grid-column: 1/2;
+        grid-row: 2/2;*/
+        z-index: -1;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: sticky;
+        left: 0;
+        top: 10.065rem
+    }
+    .main-navigator {
+        margin: 0 2rem; /* Внешняя геометрия*/
+        justify-content: space-between;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        z-index: -1;
+    }
+    .main-navigator__links-container {
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        margin-bottom: 10px;
+        order: 2;
+    }
+    .main-navigator__tools {
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        order: 1;
+    }
+    
+}
+
+@media (min-width : 992px) {
+    .content-page {
+        padding: 2rem;
+        grid-column: 2/4;
+        grid-row: 1/3;
+    }
+    
+    .content__content-navigation {
+        grid-column: 4/5;
+        z-index: -1;
+        position: sticky;
+        top: 7.5rem;
+        left: 0;
+    }
+    .content-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 25rem 1fr;  
+    }
+    .sidebar {
+        /*ИСПРАВЛЕНО!!! Блокам нельзя задавать внешнюю геометрию и позиционирование. Вместо этого, оно должно быть задано элементу.
+        Суть блока в том, что ты можешь скопипастить его в любое место и он ничего не сломает. В данном же случае, если захочешь скопипастить блок, то он сломает верстку поскольку у него задано позиционирование*/
+        grid-column: 1/2;
+        z-index: -1;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .main-navigator {
+        margin: 0 2rem; /* Внешняя геометрия*/
+        justify-content: space-between;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+    }
+    .main-navigator__links-container {
+        justify-content: space-between;
+    }
+    .main-navigator__tools {
+        justify-content: space-between;
+    }
+    
+}
+.my-row {
     display: flex;
 }
 
@@ -75,14 +234,6 @@
     color: var(--text-color-link);
 }
 
-.content-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 25rem 1fr;  
-}
-
 .list {
     overflow: hidden;
 }
@@ -92,41 +243,15 @@
     margin: 1rem;
 }
 
-.content__content-navigation {
-    grid-column: 4/5;
-}
-
-.sidebar {
-    /*ИСПРАВЛЕНО!!! Блокам нельзя задавать внешнюю геометрию и позиционирование. Вместо этого, оно должно быть задано элементу.
-    Суть блока в том, что ты можешь скопипастить его в любое место и он ничего не сломает. В данном же случае, если захочешь скопипастить блок, то он сломает верстку поскольку у него задано позиционирование*/
-    grid-column: 1/2;
-
-    overflow-y: scroll;
-}
-
 .content__sidebar {
     position: sticky;
     top: 7.0625rem;
     left: 0.625rem;
-    padding: 1rem 1rem 1rem 3rem;
-}
-
-.content-page {
-    padding: 2rem;
-    grid-column: 2/4;
-    grid-row: 1/3;
+    padding: 1rem 1rem 1rem 0.75rem;
 }
 
 .article {
     gap: 1.5rem;
-}
-
-
-.content__content-navigation {
-    position: sticky;
-    top: 90px;
-    left: 10px;
-    padding : 3rem
 }
 
 .content-navigation__link-body {
