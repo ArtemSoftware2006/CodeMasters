@@ -1,0 +1,112 @@
+@media (max-width : 992px) {
+
+    .main-navigator {
+        justify-content: space-between;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        z-index: -1;
+    }
+    .main-navigator__links-container {
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        margin-bottom: 10px;
+        order: 2;
+    }
+    .main-navigator__tools {
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        order: 1;
+    }
+
+}
+
+@media (max-width : 768px) {
+
+    .main-navigator {
+        justify-content: space-between;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        z-index: -1;
+    }
+    .main-navigator__links-container {
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        margin-bottom: 10px;
+        order: 2;
+    }
+    .main-navigator__tools {
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        order: 1;
+    }
+    
+}
+
+@media (min-width : 992px) {
+
+    .main-navigator {
+        justify-content: space-between;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+    }
+    .main-navigator__links-container {
+        justify-content: space-between;
+    }
+    .main-navigator__tools {
+        justify-content: space-between;
+    }
+    
+}
+
+.sticky-container {
+    position: sticky; /* Имееет смысл перенести это в wrapper__header, поскольку тут задается внешняя геометрия*/
+    top: 0;
+}
+
+.header__main {
+    padding: 1.5rem 1rem 1rem 1rem;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    align-content: end;
+    width: 100%;
+}
+
+.header {
+    padding: 0;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+
+.main-navigator__item {
+    margin: 0 0.5rem;
+}
+
+.links-container__item {
+    margin: 0 0.5rem;
+}
+
+.references {
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color-light);
+}
+
+.references__language-container {
+
+    padding: 0 3rem 0 0;
+}
+
+.references-item {
+    margin: 0 0.5rem;  /* Внешняя геометрия*/
+}

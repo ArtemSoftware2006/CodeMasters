@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper_calculator {
+    width: 400px;
+    border-radius: 10px;
+}
+
+.calculator {
+    background: wheat;
+    line-height: 224px;
+    padding: 0px 24px;
+}
+
+.calculator__display {
+    min-height: 100px;
+    margin: 10px;
+    background: gainsboro;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.controls__item {
+    background: bisque;
+}
+
+.controls__item:hover {
+    background: aquamarine;
+    cursor: pointer;
+}
+
+.button{
+
+}

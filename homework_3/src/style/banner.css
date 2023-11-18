@@ -1,0 +1,5 @@
+.banner {
+    background-color: var(--bg-color-light);
+    padding: 1.5rem;
+    text-align: center;
+}

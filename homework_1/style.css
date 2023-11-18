@@ -1,0 +1,63 @@
+
+:root {
+    --color-button-reset: rgb(255, 186, 88);
+    --color-button-submit: aquamarine;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+} 
+
+.contnent {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.contnent--item {
+    margin: 5px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.form--field--label {
+    margin: 10px 0px 0px 2px;
+}
+
+.form--field {
+    padding: 3px;
+    margin: 2px;
+}
+
+.form--title {
+    text-align: center;
+}
+
+.form--checkbox--row {
+    display: flex;
+    flex-direction: column;
+}
+
+.form--button--submit {
+    background-color: var(--color-button-submit);
+    padding: 3px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.form--button--reset {
+    background-color: var(--color-button-reset);
+    padding: 3px;
+    border-radius: 5px;
+    margin: 5px;
+}
