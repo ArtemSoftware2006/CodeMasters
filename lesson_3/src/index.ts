@@ -48,3 +48,19 @@ class ElectroCar extends Car {
 
 const input  = document.querySelector('dsf');
 const value1 = (input as HTMLInputElement).value
+
+class Queue<T> {
+    private readonly Id : number 
+    private data : T[] = [];
+
+    constructor(id : number) {
+        this.Id = id;
+    }
+
+    get GetData() : T[] {
+        return this.data;
+    }
+
+    push = (item : T) => this.data.push(item)
+    pop = () => this.data.shift()
+}
