@@ -1,0 +1,46 @@
+@import url('./normalize.css');
+
+$text : 24px;
+$heading : 48px;
+$text-color : #EDF5E1;
+$primary-color : #5CDB95;
+$ligth-primary-color : #99f5c2;
+$secondary-color : #05386B;
+$border-color : #379683;
+
+body {
+    background: linear-gradient(to bottom right ,$secondary-color, $ligth-primary-color);
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content : center;
+    align-items : center;
+
+    &__app {
+        width: 90vh;
+        min-height: 80vh;
+        padding: 8px;
+        border: 3px solid $border-color;
+        border-radius: 12px;
+        background-color: $primary-color;
+    }
+}
+
+.app {
+    &__title {
+        font-size: $heading;
+        color : $text-color;
+        letter-spacing: 6px;
+        text-align: center;
+    }
+}
+
+.question {
+
+    &__text {
+        font-size: $text;
+        color : $secondary-color;
+    }
+}
