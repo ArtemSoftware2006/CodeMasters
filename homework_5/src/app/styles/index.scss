@@ -4,8 +4,11 @@ $text : 24px;
 $heading : 48px;
 $text-color : #EDF5E1;
 $primary-color : #5CDB95;
+$error-color : rgb(169, 41, 41);
+$success-color : rgb(6, 185, 63);
 $ligth-primary-color : #99f5c2;
 $secondary-color : #05386B;
+$secondary-color-ligth : #0f5aa4;
 $border-color : #379683;
 
 body {
@@ -19,6 +22,10 @@ body {
     align-items : center;
 
     &__app {
+
+        display : grid;
+        grid-template-rows: auto 1fr auto;
+
         width: 90vh;
         min-height: 80vh;
         padding: 8px;
@@ -35,6 +42,21 @@ body {
         letter-spacing: 6px;
         text-align: center;
     }
+
+    &__button {
+        display: block;
+        background-color: $secondary-color;
+        color:$text-color;
+        min-width: 200px;
+        line-height: 32px;
+        font-size: $text;
+        margin: 0 auto;
+        margin-bottom : 12px;
+
+        &:hover {
+            background-color: $secondary-color-ligth;
+        }
+    }
 }
 
 .question {
@@ -42,5 +64,47 @@ body {
     &__text {
         font-size: $text;
         color : $secondary-color;
+    }
+
+    &__answers {
+        font-size : $text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom : 24px;
+    }
+}
+
+.button {
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+
+    &__answer {
+        margin: 6px;
+        min-width: 90%;
+        line-height: 32px;
+
+        &:hover {
+            background-color: $ligth-primary-color;
+            color: white;
+        }
+        &_true {
+            background-color: $success-color;
+
+            &:hover {
+                background-color: $success-color;
+                color :white
+            }
+        }
+        &_false {
+            background-color: $error-color;
+
+            &:hover {
+                background-color: $error-color;
+                color :white
+            }
+        }
     }
 }

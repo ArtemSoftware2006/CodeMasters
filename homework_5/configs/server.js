@@ -1,13 +1,13 @@
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('data/db.json')
-const middlewares = jsonServer.defaults()
+import { create, router as _router, defaults, bodyParser } from 'json-server'
+const server = create()
+const router = _router('data/db.json')
+const middlewares = defaults()
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
 
 // Add custom routes before JSON Server router
-server.use(jsonServer.bodyParser)
+server.use(bodyParser)
 
 server.post('/check-answer', (request, response) => {
     const questions = router.db.get("questions").value()
