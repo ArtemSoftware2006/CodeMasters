@@ -1,108 +1,108 @@
 {
-   "questions" : [
-      {
-          "id" : 1,
-          "text" : "Столица России (на 2023 год)?",
-          "answers" : [
-            {
-                "id" : 1,
-                "text" : "Москва",
-                "correct" : true
-            },
-            {
-                "id" : 1,
-                "text" : "Санкт-Петербург",
-                "correct" : false
-            },
-            {
-                "id" : 1,
-                "text" : "Минск",
-                "correct" : false
-            },
-            {
-                "id" : 1,
-                "text" : "Краснодар",
-                "correct" : false
-            }
-          ]
-      },
-      {
-        "id" : 2,
-        "text" : "Какого изотопа водорода не существует?",
-        "answers" : [
-          {
-              "id" : 1,
-              "text" : "Тритий",
-              "correct" : false
-          },
-          {
-              "id" : 2,
-              "text" : "Дейтерий",
-              "correct" : false
-          },
-          {
-              "id" : 3,
-              "text" : "Протий",
-              "correct" : false
-          },
-          {
-              "id" : 4,
-              "text" : "Мавродий",
-              "correct" : true
-          }
-        ]
-    },
-    {
-        "id" : 3,
-        "text" : "В каком году вышла игра Dota 2?",
-        "answers" : [
-          {
-              "id" : 1,
-              "text" : "2012",
-              "correct" : true
-          },
-          {
-              "id" : 2,
-              "text" : "2013",
-              "correct" : false
-          },
-          {
-              "id" : 3,
-              "text" : "2009",
-              "correct" : false
-          },
-          {
-              "id" : 4,
-              "text" : "1999",
-              "correct" : false
-          }
-        ]
-    },
-    {
-        "id" : 4,
-        "text" : "Самое высокое здание в мире (на 2023 год)",
-        "answers" : [
-          {
-              "id" : 1,
-              "text" : "Небоскрёб Бурдж-Халифа",
-              "correct" : true
-          },
-          {
-              "id" : 2,
-              "text" : "Tokio Sky Tree",
-              "correct" : false
-          },
-          {
-              "id" : 3,
-              "text" : "Лахта центр",
-              "correct" : false
-          },
-          {
-              "id" : 4,
-              "text" : "Шайнхайская башня",
-              "correct" : false
-          }
-        ]
-    }
-   ]
+    "questions": [
+        {
+            "id": 1,
+            "text": "Столица России (на 2023 год)?",
+            "answers": [
+                {
+                    "id": 1,
+                    "text": "Москва",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "Санкт-Петербург",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Минск",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Краснодар",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "Какого изотопа водорода не существует?",
+            "answers": [
+                {
+                    "id": 1,
+                    "text": "Тритий",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Дейтерий",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Протий",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Мавродий",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "В каком году вышла игра Dota 2?",
+            "answers": [
+                {
+                    "id": 1,
+                    "text": "2012",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "2013",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "2009",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "1999",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "Самое высокое здание в мире (на 2023 год)",
+            "answers": [
+                {
+                    "id": 1,
+                    "text": "Небоскрёб Бурдж-Халифа",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "Tokio Sky Tree",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Лахта центр",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Шайнхайская башня",
+                    "correct": false
+                }
+            ]
+        }
+    ]
 }

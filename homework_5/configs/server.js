@@ -1,26 +1,25 @@
-import { create, router as _router, defaults, bodyParser } from 'json-server'
-const server = create()
-const router = _router('data/db.json')
-const middlewares = defaults()
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const jsonServer = require('json-server')
+const server = jsonServer.create()
+const router = jsonServer.router('data/db.json')
+const middlewares = jsonServer.defaults()
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
 
 // Add custom routes before JSON Server router
-server.use(bodyParser)
+server.use(jsonServer.bodyParser)
 
 server.post('/check-answer', (request, response) => {
     const questions = router.db.get("questions").value()
     const userAnswerId = request.body.answerId
     const questionId = request.body.questionId
 
-    console.log(questions)
+    const question = questions.find(item => item.id == questionId)
+    console.log(question.answers.find(item => item.correct))
+    const rightAnswer = question.answers.find(item => item.correct).id
 
-    const question = questions.find(item => item.id === questionId)
-
-    const rightAnswer = question.answers.find(item => item.isCorrect)
-
-    const isCorrect = rightAnswer === userAnswerId
+    const isCorrect = rightAnswer == userAnswerId
 
     response.json({
         isCorrect : isCorrect,
@@ -30,17 +29,21 @@ server.post('/check-answer', (request, response) => {
 
 server.post('/calculate-score', (request, response) => {
     const questions = router.db.get("questions").value()
-    const userAnswers = request.body.answers
+    const userAnswers = request.body
     let score = 0
+
+    console.log(userAnswers)
     
     userAnswers.forEach(answer => {
-        const question = questions.find(item => item.id === answer.questionId)
-        const rightAnswer = question.answers.find(item => item.isCorrect)
+        const question = questions.find(item => item.id == answer.questionId)
+        const rightAnswer = question.answers.find(item => item.correct).id
 
-        if (rightAnswer === answer.answerId) {
+        if (rightAnswer == answer.answerId) {
             score++;
         }
     });
+
+    console.log(score)
 
     return response.json({
         score : score
