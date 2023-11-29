@@ -14,11 +14,16 @@ const questionText = document.getElementById("questionText") as HTMLDivElement
 let userAnswers: IUserSelectedAnswer[] = [];
 let questions: IQuestion[] = [];
 let currentQuestionIndex = 1;
-
+let miliseconds = 0;
+let timer : NodeJS.Timeout;
+let isTimerStart : boolean = false;
 
 window.addEventListener("DOMContentLoaded", initialization)
 
 async function initialization() {
+
+    timer = setInterval(tick, 100)
+    isTimerStart = true;
 
     questions = await getQuestions();
     showQuestion(currentQuestionIndex)
@@ -29,10 +34,15 @@ async function nextButtonClickHandler() {
     currentQuestionIndex++
 
     if (currentQuestionIndex <= questions.length) {
+        if (!isTimerStart) {
+            timer = setInterval(tick, 100)
+        }
+
+        isTimerStart = true;
+
         nextButton.innerText = NextButtonText.next
         resetState()
         showQuestion(currentQuestionIndex)
-        console.log(currentQuestionIndex)
     }
     else {
         currentQuestionIndex = 0;
@@ -41,6 +51,15 @@ async function nextButtonClickHandler() {
 
         const score = await getScore(userAnswers)
         questionText.innerText = score.score.toString()
+
+        clearInterval(timer)
+
+        const timeDiv = document.createElement("div");
+        timeDiv.innerText = "Time : " + miliseconds / 1000 + "s"
+        answersDiv.appendChild(timeDiv);
+
+        isTimerStart = false;
+        miliseconds = 0;
 
         nextButton.style.display = 'block'
         nextButton.innerText = NextButtonText.playAgain
@@ -128,4 +147,9 @@ async function selectAnswer(e: MouseEvent) {
     })
 
     nextButton.style.display = 'block'
+}
+
+function tick() {
+    miliseconds += 100;
+    //console.log(miliseconds)
 }
