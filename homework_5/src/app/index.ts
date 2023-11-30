@@ -4,71 +4,112 @@ import { IQuestion } from './models/question';
 import { ICheckAnswer } from './models/response';
 import { getQuestions } from './services/questionService';
 import { checkAnswer, getScore } from './services/quiz';
+import { Timer } from './services/timer';
 import './styles/index.scss';
 
 const nextButton = document.getElementById("nextBtn") as HTMLButtonElement
+const hintButton = document.getElementById("hintBtn") as HTMLButtonElement
 const wrapper = document.getElementById("wrapper") as HTMLDivElement
 const answersDiv = document.getElementById("answersDiv") as HTMLDivElement
 const questionText = document.getElementById("questionText") as HTMLDivElement
+const questionDiv = questionText.parentElement as HTMLDivElement
 
+let isHintShow = false;
 let userAnswers: IUserSelectedAnswer[] = [];
 let questions: IQuestion[] = [];
-let currentQuestionIndex = 1;
-let miliseconds = 0;
-let timer : NodeJS.Timeout;
-let isTimerStart : boolean = false;
+let currentQuestionIndex = 0;
+const timer : Timer = new Timer();
 
-window.addEventListener("DOMContentLoaded", initialization)
+window.addEventListener("DOMContentLoaded", start)
+
+function start() {
+    nextButton.style.display = 'block'
+    hintButton.style.display = 'none'
+
+    questionText.innerText = "Готовы пройти увлекательный квест?"
+
+    nextButton.innerHTML = NextButtonText.start
+
+    nextButton.addEventListener("click", initialization)
+}
 
 async function initialization() {
 
-    timer = setInterval(tick, 100)
-    isTimerStart = true;
+    hintButton.style.display = " block"
+    timer.start()
+
+    hintButton.addEventListener("click", () => {
+
+        if(isHintShow) {
+            return
+        }
+
+        isHintShow = true;
+        
+        const hintDiv = document.createElement("p")
+
+        hintDiv.innerText = questions[currentQuestionIndex].hint;
+        hintDiv.classList.add("question__hint")
+
+        questionDiv.appendChild(hintDiv)
+    })
 
     questions = await getQuestions();
     showQuestion(currentQuestionIndex)
-    nextButton?.addEventListener("click", nextButtonClickHandler)
+
+    nextButton.removeEventListener("click", initialization)
+    nextButton.addEventListener("click", nextButtonClickHandler)
 }
 
 async function nextButtonClickHandler() {
     currentQuestionIndex++
 
-    if (currentQuestionIndex <= questions.length) {
-        if (!isTimerStart) {
-            timer = setInterval(tick, 100)
-        }
+    if (currentQuestionIndex < questions.length) {
+        wrapper.style.textAlign = 'left'
+        hintButton.style.display = "block"
+        isHintShow = false
 
-        isTimerStart = true;
+        if (!timer.getIsStart()) {
+            timer.start()
+        }
 
         nextButton.innerText = NextButtonText.next
         resetState()
         showQuestion(currentQuestionIndex)
     }
     else {
-        currentQuestionIndex = 0;
-        userAnswers = [];
         resetState()
-
+        
         const score = await getScore(userAnswers)
-        questionText.innerText = score.score.toString()
 
-        clearInterval(timer)
+        wrapper.style.textAlign = 'center'
+        questionText.innerText = "Поздравляю! Вы прошли квиз! \nВаш результат : " + score.score.toString() + " из " + questions.length
 
+        const miliseconds = timer.stop();
         const timeDiv = document.createElement("div");
-        timeDiv.innerText = "Time : " + miliseconds / 1000 + "s"
+        timeDiv.innerText = "Время : " +  miliseconds / 1000 + " с"
         answersDiv.appendChild(timeDiv);
 
-        isTimerStart = false;
-        miliseconds = 0;
-
         nextButton.style.display = 'block'
+        hintButton.style.display = 'none'
         nextButton.innerText = NextButtonText.playAgain
+
+        currentQuestionIndex = 0;
+        userAnswers = [];
     }
 }
 
 function resetState() {
     nextButton.style.display = 'none';
-
+    
+    Array.from(questionDiv.children)
+    .forEach(item => {
+        if ((item as HTMLParagraphElement).classList?.contains("question__hint")) {
+            console.log(item)
+            questionDiv.removeChild(item)
+        }
+    })
+    
     questionText.innerText = NextButtonText.finish
 
     while (answersDiv.firstChild) {
@@ -77,15 +118,16 @@ function resetState() {
 }
 
 function showQuestion(index: number) {
-    questionText.innerText = questions[index - 1].text;
+    questionText.innerText = questions[index].text;
 
-    questions[index - 1].answers.forEach(answer => {
+    questions[index].answers.forEach(answer => {
         createButton(answer)
     })
 }
 
 function createButton(answer: IAnswer) {
     const answerBtn = document.createElement("button");
+
     answerBtn.type = 'button'
     answerBtn.innerText = answer.text
     answerBtn.classList.add('button', 'button__answer')
@@ -103,14 +145,14 @@ async function selectAnswer(e: MouseEvent) {
         throw Error("Id answer do not set")
     }
 
-    const answerId = answerBtn.dataset.id;
-
-    if (userAnswers.find(item => item.questionId == currentQuestionIndex)) {
-        return
+    if (userAnswers.find(item => item.questionId == currentQuestionIndex + 1)) {
+        throw Error("Id question do not set")
     }
 
+    const answerId = answerBtn.dataset.id;
+
     const resultCheckAnswer: ICheckAnswer =
-        await checkAnswer({ answerId: Number(answerId), questionId: currentQuestionIndex });
+        await checkAnswer({ answerId: Number(answerId), questionId: currentQuestionIndex + 1});
 
     if (resultCheckAnswer.isCorrect) {
         answerBtn.classList.add('button__answer_true')
@@ -143,13 +185,8 @@ async function selectAnswer(e: MouseEvent) {
 
     userAnswers.push({
         answerId: Number(answerId),
-        questionId: currentQuestionIndex
+        questionId: currentQuestionIndex + 1
     })
 
     nextButton.style.display = 'block'
-}
-
-function tick() {
-    miliseconds += 100;
-    //console.log(miliseconds)
 }

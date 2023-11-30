@@ -69,6 +69,7 @@ $border-color : #379683;
     &__text {
         font-size: $text;
         color : $secondary-color;
+        text-align: center;
     }
 
     &__answers {
@@ -77,6 +78,13 @@ $border-color : #379683;
         flex-direction: column;
         justify-content: center;
         margin-bottom : 24px;
+    }
+
+    &__hint {
+        display: block;
+        font-size: $text;
+        color: $secondary-color;
+        margin: 5px;
     }
 }
 
@@ -109,6 +117,16 @@ $border-color : #379683;
                 background-color: $error-color;
                 color :white
             }
+        }
+    }
+
+    &__hint {
+        background-color: $secondary-color;
+        color: $text-color;
+        padding: 8px 22px;
+
+        &:hover {
+            background-color: $secondary-color-ligth;
         }
     }
 }

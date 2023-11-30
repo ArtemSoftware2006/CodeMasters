@@ -16,7 +16,6 @@ server.post('/check-answer', (request, response) => {
     const questionId = request.body.questionId
 
     const question = questions.find(item => item.id == questionId)
-    console.log(question.answers.find(item => item.correct))
     const rightAnswer = question.answers.find(item => item.correct).id
 
     const isCorrect = rightAnswer == userAnswerId
@@ -31,8 +30,6 @@ server.post('/calculate-score', (request, response) => {
     const questions = router.db.get("questions").value()
     const userAnswers = request.body
     let score = 0
-
-    console.log(userAnswers)
     
     userAnswers.forEach(answer => {
         const question = questions.find(item => item.id == answer.questionId)
@@ -42,8 +39,6 @@ server.post('/calculate-score', (request, response) => {
             score++;
         }
     });
-
-    console.log(score)
 
     return response.json({
         score : score
