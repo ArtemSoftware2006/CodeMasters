@@ -7,7 +7,7 @@ import { checkAnswer, getScore } from './services/quiz';
 import { Timer } from './services/timer';
 import './styles/index.scss';
 
-const nextButton = document.getElementById("nextBtn") as HTMLButtonElement
+const nextButton = document.getElementById("nextBtn") as HTMLButtonElement // Всегда в конце строк используй ;, это обязательно
 const hintButton = document.getElementById("hintBtn") as HTMLButtonElement
 const wrapper = document.getElementById("wrapper") as HTMLDivElement
 const answersDiv = document.getElementById("answersDiv") as HTMLDivElement
@@ -35,7 +35,7 @@ function start() {
 
 async function initialization() {
 
-    hintButton.style.display = " block"
+    hintButton.style.display = " block" // Будь аккуратен с пробелами, это может привести к ошибкам. Тут ошибки не будет, но он не нужен
     timer.start()
 
     hintButton.addEventListener("click", () => {
@@ -45,7 +45,7 @@ async function initialization() {
         }
 
         isHintShow = true;
-        
+        // Всё что ниже можно вынести в функцию отдельную, showHint, например
         const hintDiv = document.createElement("p")
 
         hintDiv.innerText = questions[currentQuestionIndex].hint;
@@ -83,7 +83,7 @@ async function nextButtonClickHandler() {
         const score = await getScore(userAnswers)
 
         wrapper.style.textAlign = 'center'
-        questionText.innerText = "Поздравляю! Вы прошли квиз! \nВаш результат : " + score.score.toString() + " из " + questions.length
+        questionText.innerText = "Поздравляю! Вы прошли квиз! \nВаш результат : " + score.score.toString() + " из " + questions.length // Советую посмотреть https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals, синтаксис удобнее и безопаснее
 
         const miliseconds = timer.stop();
         const timeDiv = document.createElement("div");
@@ -105,7 +105,7 @@ function resetState() {
     Array.from(questionDiv.children)
     .forEach(item => {
         if ((item as HTMLParagraphElement).classList?.contains("question__hint")) {
-            console.log(item)
+            console.log(item) // Оставлять console.log считается не очень з
             questionDiv.removeChild(item)
         }
     })

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx webpack serve && webpack --watch --mode development",
+    "dev": "npx webpack serve && webpack --watch --mode development", // Команда некорректная
     "build": "webpack --mode production",
     "json-server": "node configs/server.js",
     "test" : "jest"

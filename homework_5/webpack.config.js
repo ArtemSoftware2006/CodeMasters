@@ -1,3 +1,4 @@
+// Вот это прям очень плохо. Если приходится таким образом прибивать TS значит делаешь что-то не то, надо разбираться
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
