@@ -1,9 +1,6 @@
-// Вот это прям очень плохо. Если приходится таким образом прибивать TS значит делаешь что-то не то, надо разбираться
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// ИСПРАВЕННО!!! Вот это прям очень плохо. Если приходится таким образом прибивать TS значит делаешь что-то не то, надо разбираться
 const path = require('path');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 require("webpack-dev-server")
 

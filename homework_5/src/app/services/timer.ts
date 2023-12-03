@@ -8,23 +8,23 @@ export class Timer {
     }
 
     public start() {
-        this.isStart = true
+        this.isStart = true;
         this.miliseconds = 0;
-        this.timer = setInterval(this.tick.bind(this), 100)
+        this.timer = setInterval(this.tick.bind(this), 100);
     }
 
     public stop() {
         this.isStart = false;
-        clearInterval(this.timer)
+        clearInterval(this.timer);
 
         return this.miliseconds;
     }
 
     public getIsStart() {
-        return this.isStart
+        return this.isStart;
     }
     public getMiliseconds() {
-        return this.miliseconds
+        return this.miliseconds;
     }
 
     private tick() {

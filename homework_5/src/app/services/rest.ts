@@ -16,5 +16,5 @@ export async function post<T, K>(url : string, data : T) : Promise<K> {
             'Content-Type' : 'application/json'
         },
         body : JSON.stringify(data)
-    })).json()
+    })).json();
 }
