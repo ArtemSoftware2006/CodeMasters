@@ -90,7 +90,7 @@ describe('App', () => {
     it("should get questions from service after init", async () => {
         expect(app.questions.length).toEqual(0);
 
-        await app.initialization();
+        await app.nextButton.click();
 
         expect(app.questions.length).toEqual(2);
         expect(app.questions[0].id).toEqual(1);
@@ -100,7 +100,7 @@ describe('App', () => {
     it("should show questions after initialization", async () => {
         const startQuizStub = jest.spyOn(app, "showQuestion").mockImplementation();
 
-        await app.initialization();
+        await app.nextButton.click();
 
         expect(startQuizStub).toHaveBeenCalledTimes(1);
     })
@@ -111,25 +111,12 @@ describe('App', () => {
 
         object = new App();
 
-        expect(nextBtnEventListener).toHaveBeenCalledWith("click", object.initialization);
+        expect(nextBtnEventListener).toHaveBeenCalledTimes(1);
     })
 
-    it("should remove eventListener and add nextButtonClickHandler on nextButton after first click", async () => {
-        const nextButtonRemoveEventListener = jest.fn();
-        const nextButtonAddEventListener = jest.fn();
-      
-        jest.spyOn(app.nextButton, "removeEventListener").mockImplementation(nextButtonRemoveEventListener);
-        jest.spyOn(app.nextButton, "addEventListener").mockImplementation(nextButtonAddEventListener);
-      
-        await app.initialization();
-      
-        //TODO Спросить у Ромы, что делать, чтобы проверить, что функция bind с нужным объектом
-        expect(nextButtonRemoveEventListener).toHaveBeenCalledWith("click", app.initialization);
-        expect(nextButtonAddEventListener).toHaveBeenCalledWith("click", app.nextButtonClickHandler)
-      })
 
       it("should increment index when go to next question", async () => {
-        await app.initialization()
+        await app.nextButton.click()
 
         const initialQuestionIdx = app.currentQuestionIndex;
         app.goToNextQuestion();
@@ -141,7 +128,7 @@ describe('App', () => {
         jest.spyOn(quizService, "getScore")
             .mockReturnValue(Promise.resolve({score: 1}));
 
-        await app.initialization()
+        await app.nextButton.click()
 
         app.userAnswers.push({questionId : 1, answerId : 1})
 
@@ -155,7 +142,7 @@ describe('App', () => {
       });
 
       it('should reset state and start quiz again', async () => {
-            await app.initialization();
+            await app.nextButton.click();
 
             app.currentQuestionIndex = app.questions.length;
             //await app.showScore();
@@ -166,7 +153,7 @@ describe('App', () => {
         });
 
         it('should show question when calling showQuestion', async () => {
-            await app.initialization();
+            await app.nextButton.click();
     
             app.showQuestion(0);
     

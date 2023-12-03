@@ -16,6 +16,7 @@ export class App {
     public questionDiv : HTMLDivElement;   
 
     public isHintShow : boolean;
+    public isQuizStart : boolean;
     public currentQuestionIndex : number;
     public userAnswers: IUserSelectedAnswer[];
     public questions: IQuestion[];
@@ -30,13 +31,13 @@ export class App {
         this.questionDiv = this.questionText.parentElement as HTMLDivElement;   
         
         this.isHintShow = false;
+        this.isQuizStart = false;
         this.currentQuestionIndex = 0;
         this.userAnswers = [];
         this.questions = [];
         this.timer = new Timer();
 
-        this.initialization = this.initialization.bind(this)
-        this.nextButton.addEventListener("click", this.initialization);
+        this.nextButton.addEventListener("click", () => this.nextButtonClickHandler());
     } 
 
     public start() {
@@ -46,21 +47,6 @@ export class App {
         this.questionText.innerText = "Готовы пройти увлекательный квест?";
     
         this.nextButton.innerHTML = NextButtonText.start;
-    }
-    
-    public async initialization() {
-        this.hintButton.style.display = "block"; // ИСПРАВЛЕННО!!! Будь аккуратен с пробелами, это может привести к ошибкам. Тут ошибки не будет, но он не нужен
-        this.nextButton.style.display = "none"
-        this.nextButton.innerText = NextButtonText.next;
-        this.timer.start();
-
-        this.hintButton.addEventListener("click", () => this.clickHintButton())
-
-        this.questions = await getQuestions();
-        this.showQuestion(this.currentQuestionIndex);
-
-        this.nextButton.removeEventListener("click", this.initialization)
-        this.nextButton.addEventListener("click", this.nextButtonClickHandler.bind(this));
     }
 
     public clickHintButton() {
@@ -83,28 +69,47 @@ export class App {
     }
 
     public async nextButtonClickHandler() {    
+        if (!this.isQuizStart) {
+            this.hintButton.style.display = "block"; // ИСПРАВЛЕННО!!! Будь аккуратен с пробелами, это может привести к ошибкам. Тут ошибки не будет, но он не нужен
+            this.nextButton.style.display = "none"
+            this.nextButton.innerText = NextButtonText.next;
+            this.timer.start();
+    
+            this.hintButton.addEventListener("click", () => this.clickHintButton());
+    
+            this.questions = await getQuestions();
+            this.showQuestion(this.currentQuestionIndex);
+
+            this.isQuizStart = true;
+
+            return;
+        }
 
         if (this.currentQuestionIndex < this.questions.length - 1) {
             this.goToNextQuestion();
         }
         else {
-            this.resetState();
-            
-            await this.showScore() //ИСПРАВЛЕННО!!! Советую посмотреть https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals, синтаксис удобнее и безопаснее
-    
-            const miliseconds = this.timer.stop();
-            const timeDiv = document.createElement("div");
-            timeDiv.innerText = `Время : ${miliseconds / 1000} с`
-            this.answersDiv.appendChild(timeDiv);
-    
-            this.nextButton.style.display = 'block';
-            this.hintButton.style.display = 'none';
-            this.nextButton.innerText = NextButtonText.playAgain;
-            
-            //-1, так как при начале квиза мы сразу инкрементируем currentQuestionIndex
-            this.currentQuestionIndex = -1;
-            this.userAnswers = [];
+            await this.startQuizAgain()
         }
+    }
+
+    public async startQuizAgain() {
+        this.resetState();
+            
+        await this.showScore() //ИСПРАВЛЕННО!!! Советую посмотреть https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals, синтаксис удобнее и безопаснее
+
+        const miliseconds = this.timer.stop();
+        const timeDiv = document.createElement("div");
+        timeDiv.innerText = `Время : ${miliseconds / 1000} с`
+        this.answersDiv.appendChild(timeDiv);
+
+        this.nextButton.style.display = 'block';
+        this.hintButton.style.display = 'none';
+        this.nextButton.innerText = NextButtonText.playAgain;
+        
+        //-1, так как при начале квиза мы сразу инкрементируем currentQuestionIndex
+        this.currentQuestionIndex = -1;
+        this.userAnswers = [];
     }
 
     public async showScore() {
