@@ -78,6 +78,7 @@ export class App {
             this.hintButton.addEventListener("click", () => this.clickHintButton());
     
             this.questions = await getQuestions();
+
             this.showQuestion(this.currentQuestionIndex);
 
             this.isQuizStart = true;

@@ -13,22 +13,18 @@ const questionsStub : IQuestion[] = [
             {
                 "id": 1,
                 "text": "Москва",
-                "isCorrect": true
             },
             {
                 "id": 2,
                 "text": "Санкт-Петербург",
-                "isCorrect": false
             },
             {
                 "id": 3,
                 "text": "Минск",
-                "isCorrect": false
             },
             {
                 "id": 4,
                 "text": "Краснодар",
-                "isCorrect": false
             }
         ]
     },
@@ -40,22 +36,18 @@ const questionsStub : IQuestion[] = [
             {
                 "id": 1,
                 "text": "Тритий",
-                "isCorrect": false
             },
             {
                 "id": 2,
                 "text": "Дейтерий",
-                "isCorrect": false
             },
             {
                 "id": 3,
                 "text": "Протий",
-                "isCorrect": false
             },
             {
                 "id": 4,
                 "text": "Мавродий",
-                "isCorrect": true
             }
         ]
     },

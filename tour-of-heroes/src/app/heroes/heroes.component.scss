@@ -1,0 +1,30 @@
+ul, li { margin-left: 0; padding-left: 0; }
+
+
+.heroes-item {
+    margin: 10px 0px; 
+
+    &__button {
+        display: flex;
+        align-items: stretch;
+        justify-content: start;
+
+        padding: 8px;
+        border-radius: 4px;
+        border: none;
+        background-color: white;
+    }
+
+    &__name {
+        letter-spacing: 2px;
+        padding: 8px;
+        background-color: aquamarine;
+    }
+
+    &__badge {
+        height: 100%;
+        padding: 8px;
+        border-radius: 6px 0px 0px 6px;
+        background-color: rgb(33, 205, 148);
+    }
+}

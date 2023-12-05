@@ -9,6 +9,21 @@ server.use(middlewares)
 // Add custom routes before JSON Server router
 server.use(jsonServer.bodyParser)
 
+server.get('/questions', (request, response) => {
+    const questions = router.db.get("questions").value()
+   
+    const questionsWithoutRigthAnswer = questions.map(question => {
+        const updatedAnswers = question.answers.map(answer => {
+          const { correct, ...rest } = answer;
+          return rest;
+        });
+      
+        return { ...question, answers: updatedAnswers };
+      });
+    
+    response.json(questionsWithoutRigthAnswer)
+})
+
 server.post('/check-answer', (request, response) => {
     const questions = router.db.get("questions").value()
     const userAnswerId = request.body.answerId
