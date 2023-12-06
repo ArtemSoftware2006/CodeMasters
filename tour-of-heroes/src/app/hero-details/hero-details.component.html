@@ -4,4 +4,6 @@
         <label for="selected-hero-name">Name : {{hero?.name}}</label>
         <input type="text" [(ngModel)]="hero.name" placeholder="name">
     </div>
+
+    <app-button-ligth [text]="'Go back'" (buttonClick)="goBack()"></app-button-ligth>
 </div>

@@ -1,25 +1,25 @@
 import { HeroService } from './../services/hero.service';
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Hero } from '../models/hero';
 import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { HeroDetailsComponent } from '../hero-details/hero-details.component';
-import { MessageService } from '../services/message.service';
+import { RouterLink } from '@angular/router';
+import { NavbarLinkComponent } from '../../core/UI/navbar-link/navbar-link.component';
+import { HeroLabelComponent } from '../hero-label/hero-label.component';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [UpperCasePipe, FormsModule, NgFor, NgIf, HeroDetailsComponent],
+  imports: [UpperCasePipe, FormsModule, NgFor, NgIf, HeroDetailsComponent, RouterLink, NavbarLinkComponent, HeroLabelComponent],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.scss'
 })
 export class HeroesComponent {
   public heroes? : Hero[];
-  public selectedHero : Hero ;
+  public selectedHero? : Hero ;
 
-  constructor(private heroService : HeroService,
-    private messageService : MessageService) {
-    this.selectedHero = {id : 0, name : ""};
+  constructor(private heroService : HeroService) {
   }
 
   ngOnInit(): void {
@@ -29,10 +29,5 @@ export class HeroesComponent {
   public getheroes() {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
-  }
-
-  public onSelected(hero : Hero) {
-    this.messageService.addMessage(`Selected hero with id = ${hero.id}`);
-    this.selectedHero = hero;
   }
 }

@@ -1,0 +1,9 @@
+.messages {
+
+    &__row {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+    }
+}

@@ -1,3 +1,7 @@
 <h1>{{title}}</h1>
-<app-heroes></app-heroes>
+<nav class="app__navbar">
+    <app-navbar-link routerLink="/heroes">Heroes</app-navbar-link>
+    <app-navbar-link routerLink="/dashboard">Dashboard</app-navbar-link>
+</nav>
+<router-outlet></router-outlet>
 <app-messages></app-messages>
