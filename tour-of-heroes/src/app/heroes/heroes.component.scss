@@ -1,8 +1,7 @@
 ul, li { margin-left: 0; padding-left: 0; }
 
 
-.heroes-item {
-    margin: 10px 0px; 
+.heroes-item { 
 
     &__button {
         display: flex;
@@ -16,9 +15,14 @@ ul, li { margin-left: 0; padding-left: 0; }
     }
 
     &__name {
+        min-width: 200px;
         letter-spacing: 2px;
         padding: 8px;
         background-color: aquamarine;
+
+        &_selected {
+            background-color: rgb(34, 255, 181);
+        }
     }
 
     &__badge {
@@ -26,5 +30,9 @@ ul, li { margin-left: 0; padding-left: 0; }
         padding: 8px;
         border-radius: 6px 0px 0px 6px;
         background-color: rgb(33, 205, 148);
+
+        &_selected {
+            background-color: rgb(33, 196, 205);
+        }
     }
 }
